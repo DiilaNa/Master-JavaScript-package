@@ -1,0 +1,35 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+        <input id="in" type="text" onchange="showText()">
+        <div id="output"></div> 
+
+        <button id="btn">Click me</button>
+        
+        <script>
+            // method one
+            function showText() {
+                const value = document.getElementById('in').value  
+                document.getElementById("output").append(value)
+            }
+
+            //method two
+            const button = document.getElementById('btn')
+            button.addEventListener('click',showMyName)
+
+            function showMyName() {     
+                window.alert("Dilan")
+            }
+            
+            
+        </script>
+    </body>
+</html>
+
+<!-- 
+append - works with values
+appendChild - do not work with values / have to create a div/span and add the value 
+
+-->

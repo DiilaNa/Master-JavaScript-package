@@ -1,0 +1,58 @@
+<!-- 
+
+// Session -  Time that browser is working
+// Cookies -  Use to handle session data / small string / stored in browser
+
+// Cookies works only in a server 
+
+-->
+<script>
+    document.cookie = "username=dilan: max-age=5";
+    document.cookie = "language=en";
+    console.log(document.cookie);
+    
+</script>
+
+<!-- 
+--------------DOM - Document Object model--------------------
+
+DOM is the representation of the HTML Code we created
+
+When a browser loads a web page, it doesn't just look at the HTML as a flat text file. 
+Instead, it parses that text and transforms it into a structured, live representation called a Tree
+
+The HTML is the blueprint, while the DOM is the actual building
+
+-->
+
+<!-- ---------BOM - Browser Object Model(window)------------------
+ 
+window.open
+window.alert("Saved")
+
+-- setTimeout(() => console.log(w), 2000); 
+2s timeout is set and show the result
+
+-- setInterval(() => console.log(w), 2000); 
+2s repeat by 2 seconds
+
+
+-->
+
+<html>
+    <head>
+
+    </head>
+    <body>
+        <div id="div1"></div>
+
+        <script>
+            document.getElementById('div1').innerHTML = "<span>Dilan</span>"
+
+            const paragraph = document.createElement("p")
+            paragraph.innerHTML = " Nimal"
+            document.getElementById("div1").appendChild(paragraph)
+        </script>
+    </body>
+</html>
+
