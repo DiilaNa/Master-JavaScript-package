@@ -1,0 +1,53 @@
+<!-- // Application Programming API -->
+<html>
+  <head> </head>
+  <body>
+    <script>
+      localStorage.setItem("name", "Dilan");
+      localStorage.setItem("age", 22);
+
+      const age = localStorage.getItem("age");
+      console.log(age);
+      <!-- // convert to string -->
+      console.log(typeof age);
+
+      //Local Storage sets as String. To Store Objects need to convert as a JSON Object
+      const user = {
+        id: 123,
+        name: "Dilan",
+        age: 22,
+      };
+
+      // localStorage.setItem("user",user) sets as a string not a object
+      // const userFromLocalStorage = localStorage.getItem("user")
+      // console.log(userFromLocalStorage);
+      localStorage.setItem("user", JSON.stringify(user));
+      const userFromLocalStorage = localStorage.getItem("user");
+      console.log(JSON.parse(userFromLocalStorage).name);
+
+      const url = "https://api.restful-api.dev/objects";
+
+      // GET METHOD
+      fetch(url)
+        .then((response) => console.log(response))
+        .catch((error) => console.error(error));
+
+      // POST METHOD
+      fetch(url, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name: "Apple MacBook Pro",
+          Data: {
+            capacity: "512 GB",
+            color: "Gray",
+          },
+        }),
+      })
+        .then((response) => console.log(response))
+        .catch((error) => console.error(error));
+    </script>
+  </body>
+</html>
