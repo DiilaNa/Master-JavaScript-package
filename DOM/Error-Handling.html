@@ -1,0 +1,26 @@
+<html>
+  <head> </head>
+  <body>
+    <script>
+      const person = undefined;
+      try {
+        console.log(person.name);
+      } catch (error) {
+        // console.log(error.message);
+      } finally {
+        console.log("The Error is handled");
+      }
+
+      // -----------Optional  Chaining / No UI break ---------------
+      // Not handling erorr stop breaking the UI if the value is null
+      console.log(person?.name);
+
+      //----------- Nullish Coalescing ----------------------
+      // check left hand value null or undefined
+      console.log(person.name ?? "DILAN");
+
+      // console.log(person.name || "DILAN"); 
+      // check true or false not null or undefined
+    </script>
+  </body>
+</html>
