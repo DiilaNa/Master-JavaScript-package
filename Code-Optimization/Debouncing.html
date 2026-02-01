@@ -1,0 +1,51 @@
+<!--  Code Optimization
+1. use minimal code with ES6 + methods
+2. Debouncing
+-->
+
+<html>
+    <head></head>
+    <body>
+        <button id="button1">Click Me</button>
+        <script>
+            const button = document.getElementById("button1")
+
+            function debounce(fn,delay=0){
+                let timeout;
+                return function(...args) {
+                    clearTimeout(timeout)
+                    timeout = setTimeout(()=> fn(args),delay)
+                }
+            }
+            
+            button.addEventListener('click',debounce(() => {
+                console.log('Clicked');
+                
+            },1000))
+
+
+            // Use HashMaps(Keeyed Objects) on for Arrays
+
+            const users = [
+                {id:1, name:"Dilan",age:21},
+                {id:2, name:"Milan",age:21},
+                {id:3, name:"Nilan",age:21},
+                {id:4, name:"Tilan",age:21},
+            ]
+
+            const userAge = users.find(x => x.name == "Tilan").age
+            console.log(userAge);
+            
+            const keetedUseres = {
+                Prasad:  {id:1, name:"Dilan",age:21},
+                Milan: {id:2, name:"Milan",age:21},
+                Nilan: {id:3, name:"Nilan",age:21},
+                Tilan: {id:4, name:"Tilan",age:21},
+            }
+            const newUserAge = keetedUseres.Prasad.age
+            console.log(newUserAge);
+            
+            
+        </script>
+    </body>
+</html>
