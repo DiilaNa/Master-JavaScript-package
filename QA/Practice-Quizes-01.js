@@ -28,3 +28,5 @@ console.log(sumofmarks);
 let averageMarks = sumofmarks/BestStudents.length
 console.log(averageMarks);
 
+
+
